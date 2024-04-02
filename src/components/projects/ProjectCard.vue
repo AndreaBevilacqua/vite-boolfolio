@@ -4,7 +4,7 @@ export default {
     props: { project: Object },
     computed: {
         abstract() {
-            const abstract = this.project.content.slice(0, 350);
+            const abstract = this.project.content.slice(0, 550);
             return abstract + '...';
         },
         pubblicationDate() {
@@ -29,7 +29,8 @@ export default {
             <h2>{{ project.title }}</h2>
         </div>
         <div class="card-body clearfix">
-            <img v-if="project.image" :src="project.image" :alt="project.title" class="img-fluid float-start pe-3">
+            <img v-if="project.image" :src="project.image" :alt="project.title" class="img-fluid float-start me-3"
+                style="max-width: 100px;">
             <p>{{ abstract }}</p>
         </div>
         <div class="card-footer d-flex justify-content-between">
