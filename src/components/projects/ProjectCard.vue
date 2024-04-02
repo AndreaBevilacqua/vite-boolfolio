@@ -28,11 +28,12 @@ export default {
         <div class="card-header">
             <h2>{{ project.title }}</h2>
         </div>
-        <div class="card-body">
+        <div class="card-body clearfix">
+            <img v-if="project.image" :src="project.image" :alt="project.title" class="img-fluid float-start pe-3">
             <p>{{ abstract }}</p>
         </div>
         <div class="card-footer d-flex justify-content-between">
-            <address>By: {{ project.user_id }}</address>
+            <address>By: {{ project.user_id ? project.user_id : 'Anonimo' }}</address>
             <small>Pubblicato il {{ pubblicationDate }}</small>
         </div>
     </div>
