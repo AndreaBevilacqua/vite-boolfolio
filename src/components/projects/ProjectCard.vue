@@ -6,6 +6,18 @@ export default {
         abstract() {
             const abstract = this.project.content.slice(0, 350);
             return abstract + '...';
+        },
+        pubblicationDate() {
+            const date = new Date(this.project.created_at);
+
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            // const seconds = date.getSeconds();
+
+            return `${day}/${month}/${year} alle ${hours}:${minutes}`;
         }
     }
 };
@@ -21,7 +33,7 @@ export default {
         </div>
         <div class="card-footer d-flex justify-content-between">
             <address>By: {{ project.user_id }}</address>
-            <small>Pubblicato il {{ project.created_at }}</small>
+            <small>Pubblicato il {{ pubblicationDate }}</small>
         </div>
     </div>
 </template>
