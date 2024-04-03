@@ -25,8 +25,10 @@ export default {
 
 <template>
     <div class="card mt-3 mb-5">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between align-items-center">
             <h2>{{ project.title }}</h2>
+            <RouterLink :to="{ name: 'project-detail', params: { id: project.id } }" class="btn btn-primary">Vedi
+            </RouterLink>
         </div>
         <div class="card-body clearfix">
             <img v-if="project.image" :src="project.image" :alt="project.title" class="img-fluid float-start me-3"
