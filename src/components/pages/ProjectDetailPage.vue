@@ -34,7 +34,7 @@ export default {
 
 <template>
     <AppLoader v-if="isLoading && !project" />
-    <ProjectCard v-if="!isLoading && project" :project="project" />
+    <ProjectCard v-if="!isLoading && project" :project="project" :isDetail="true" />
 
 </template>
 
