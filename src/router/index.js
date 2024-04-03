@@ -7,7 +7,8 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: "/", name: "home", component: HomePage },
-        { path: "/contact-us", name: "contact-us", component: ContactUsPage }
+        { path: "/contact-us", name: "contact-us", component: ContactUsPage },
+        { path: "/:pathMatch(.*)*", redirect: "/" }
     ]
 });
 
